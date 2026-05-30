@@ -68,7 +68,7 @@ function UploadResumes() {
   };
 
   const statusIcon  = (s) => ({ pending: "⏳", uploading: "🔄", done: "✅", error: "❌" }[s]);
-  const statusColor = (s) => ({ pending: "#6b7fa8", uploading: "#f59e0b", done: "#16a34a", error: "#dc2626" }[s]);
+  const statusColor = (s) => ({ pending: "#69766f", uploading: "#b7792f", done: "#176b5b", error: "#dc2626" }[s]);
 
   const doneCount    = files.filter(f => f.status === "done").length;
   const pendingCount = files.filter(f => f.status === "pending").length;
@@ -122,8 +122,8 @@ function UploadResumes() {
                 {files.length} file{files.length > 1 ? "s" : ""} selected
               </span>
               <div style={styles.badges}>
-                {doneCount > 0    && <span style={{ ...styles.badge, background: "#dcfce7", color: "#15803d" }}>✅ {doneCount} uploaded</span>}
-                {pendingCount > 0 && <span style={{ ...styles.badge, background: "#e0f2fe", color: "#0284c7" }}>⏳ {pendingCount} pending</span>}
+                {doneCount > 0    && <span style={{ ...styles.badge, background: "#e8f0eb", color: "#176b5b" }}>✅ {doneCount} uploaded</span>}
+                {pendingCount > 0 && <span style={{ ...styles.badge, background: "#f7ead6", color: "#b7792f" }}>⏳ {pendingCount} pending</span>}
                 {errorCount > 0   && <span style={{ ...styles.badge, background: "#fef2f2", color: "#dc2626" }}>❌ {errorCount} failed</span>}
               </div>
             </div>
@@ -207,42 +207,42 @@ function TokenStatus() {
 }
 
 const ts = {
-  ok:   { background: "#dcfce7", border: "1px solid #86efac", borderRadius: 8, padding: "10px 16px", color: "#15803d", fontSize: "0.85rem", marginBottom: 20 },
+  ok:   { background: "#e8f0eb", border: "1px solid #a8beb1", borderRadius: 8, padding: "10px 16px", color: "#176b5b", fontSize: "0.85rem", marginBottom: 20 },
   warn: { background: "#fef2f2", border: "1px solid #fca5a5", borderRadius: 8, padding: "10px 16px", color: "#dc2626", fontSize: "0.85rem", marginBottom: 20 },
 };
 
 const styles = {
   page: { maxWidth: 720, margin: "0 auto", padding: "60px 24px" },
   header: { marginBottom: 28 },
-  stepTag: { display: "inline-block", padding: "3px 12px", background: "#e0f2fe", color: "#0284c7", borderRadius: 99, fontSize: "0.75rem", fontWeight: 800, letterSpacing: "0.06em", marginBottom: 14 },
-  title: { fontFamily: "'Syne', sans-serif", fontSize: "2rem", fontWeight: 700, color: "#1e3a5f", marginBottom: 8 },
-  subtitle: { color: "#6b7fa8", fontSize: "0.95rem", lineHeight: 1.6 },
-  dropZone: { border: "2px dashed #c7d7f8", borderRadius: 16, padding: "48px 24px", textAlign: "center", background: "#f8faff", marginBottom: 24, transition: "all 0.2s" },
-  dropZoneActive: { borderColor: "#2563eb", background: "rgba(37,99,235,0.04)" },
+  stepTag: { display: "inline-block", padding: "3px 12px", background: "#e8f0eb", color: "#17352f", borderRadius: 99, fontSize: "0.75rem", fontWeight: 800, letterSpacing: "0.06em", marginBottom: 14 },
+  title: { fontFamily: "'Syne', sans-serif", fontSize: "2rem", fontWeight: 700, color: "#17352f", marginBottom: 8 },
+  subtitle: { color: "#69766f", fontSize: "0.95rem", lineHeight: 1.6 },
+  dropZone: { border: "2px dashed #d9c8ad", borderRadius: 16, padding: "48px 24px", textAlign: "center", background: "#fffdf8", marginBottom: 24, transition: "all 0.2s" },
+  dropZoneActive: { borderColor: "#b7792f", background: "rgba(183,121,47,0.07)" },
   dropIcon: { fontSize: "3rem", marginBottom: 12 },
-  dropTitle: { fontSize: "1.05rem", fontWeight: 600, color: "#1e3a5f", marginBottom: 6 },
-  dropSub: { color: "#6b7fa8", fontSize: "0.875rem", marginBottom: 24 },
+  dropTitle: { fontSize: "1.05rem", fontWeight: 600, color: "#17352f", marginBottom: 6 },
+  dropSub: { color: "#69766f", fontSize: "0.875rem", marginBottom: 24 },
   btnRow: { display: "flex", gap: 12, justifyContent: "center" },
-  pickBtn: { padding: "10px 22px", background: "#ffffff", border: "1px solid #c7d7f8", borderRadius: 8, color: "#1e3a5f", fontWeight: 600, fontSize: "0.875rem", cursor: "pointer", fontFamily: "'DM Sans', sans-serif" },
-  fileListCard: { background: "#ffffff", border: "1px solid #c7d7f8", borderRadius: 16, padding: "24px", boxShadow: "0 2px 16px rgba(37,99,235,0.07)" },
+  pickBtn: { padding: "10px 22px", background: "#ffffff", border: "1px solid #d9c8ad", borderRadius: 8, color: "#17352f", fontWeight: 600, fontSize: "0.875rem", cursor: "pointer", fontFamily: "'DM Sans', sans-serif" },
+  fileListCard: { background: "#ffffff", border: "1px solid #d9c8ad", borderRadius: 16, padding: "24px", boxShadow: "0 2px 16px rgba(23,53,47,0.08)" },
   fileListHeader: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 },
-  fileListTitle: { fontFamily: "'Syne', sans-serif", fontWeight: 700, color: "#1e3a5f", fontSize: "0.95rem" },
+  fileListTitle: { fontFamily: "'Syne', sans-serif", fontWeight: 700, color: "#17352f", fontSize: "0.95rem" },
   badges: { display: "flex", gap: 8 },
   badge: { padding: "3px 10px", borderRadius: 99, fontSize: "0.75rem", fontWeight: 600 },
   fileList: { display: "flex", flexDirection: "column", gap: 10, marginBottom: 20, maxHeight: 340, overflowY: "auto" },
-  fileRow: { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 14px", background: "#f8faff", border: "1px solid #e8f0fe", borderRadius: 10 },
+  fileRow: { display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 14px", background: "#fffdf8", border: "1px solid #e8dfcf", borderRadius: 10 },
   fileInfo: { display: "flex", alignItems: "center", gap: 12 },
-  fileExt: { width: 40, height: 40, borderRadius: 8, background: "#dbeafe", color: "#1d4ed8", fontSize: "0.65rem", fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 },
-  fileName: { fontSize: "0.875rem", fontWeight: 600, color: "#1e3a5f", marginBottom: 2 },
-  fileMeta: { fontSize: "0.78rem", color: "#6b7fa8", display: "flex", alignItems: "center", gap: 6 },
-  idPill: { padding: "1px 8px", background: "#dcfce7", border: "1px solid #86efac", borderRadius: 99, color: "#15803d", fontSize: "0.72rem", fontWeight: 600 },
+  fileExt: { width: 40, height: 40, borderRadius: 8, background: "#e8f0eb", color: "#17352f", fontSize: "0.65rem", fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 },
+  fileName: { fontSize: "0.875rem", fontWeight: 600, color: "#17352f", marginBottom: 2 },
+  fileMeta: { fontSize: "0.78rem", color: "#69766f", display: "flex", alignItems: "center", gap: 6 },
+  idPill: { padding: "1px 8px", background: "#e8f0eb", border: "1px solid #a8beb1", borderRadius: 99, color: "#176b5b", fontSize: "0.72rem", fontWeight: 600 },
   fileRight: { display: "flex", alignItems: "center", gap: 10 },
-  removeBtn: { background: "none", border: "none", cursor: "pointer", color: "#6b7fa8", fontSize: "0.9rem", padding: "2px 6px" },
-  uploadBtn: { width: "100%", padding: "13px", background: "#0284c7", color: "#ffffff", border: "none", borderRadius: 8, fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer" },
+  removeBtn: { background: "none", border: "none", cursor: "pointer", color: "#69766f", fontSize: "0.9rem", padding: "2px 6px" },
+  uploadBtn: { width: "100%", padding: "13px", background: "#176b5b", color: "#fff8ef", border: "none", borderRadius: 8, fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer" },
   successRow: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 },
-  successMsg: { color: "#15803d", fontWeight: 600, fontSize: "0.95rem" },
-  nextBtn: { padding: "11px 22px", background: "#2563eb", color: "#ffffff", border: "none", borderRadius: 8, fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "0.9rem", cursor: "pointer", whiteSpace: "nowrap" },
-  emptyNote: { textAlign: "center", color: "#93b4d0", fontSize: "0.875rem", marginTop: 8 },
+  successMsg: { color: "#176b5b", fontWeight: 600, fontSize: "0.95rem" },
+  nextBtn: { padding: "11px 22px", background: "#17352f", color: "#fff8ef", border: "none", borderRadius: 8, fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "0.9rem", cursor: "pointer", whiteSpace: "nowrap" },
+  emptyNote: { textAlign: "center", color: "#8a9a91", fontSize: "0.875rem", marginTop: 8 },
 };
 
 export default UploadResumes;

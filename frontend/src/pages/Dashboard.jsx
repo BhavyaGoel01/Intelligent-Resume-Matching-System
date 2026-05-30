@@ -8,8 +8,8 @@ const steps = [
     title: "Add Required Skills",
     desc: "Define the skills and technologies required for the job role.",
     route: "/add-skills",
-    accent: "#2563eb",
-    light: "#dbeafe",
+    accent: "#17352f",
+    light: "#e8f0eb",
     btn: "Add Skills →",
   },
   {
@@ -18,8 +18,8 @@ const steps = [
     title: "Upload Resumes",
     desc: "Upload one file, multiple files, or an entire folder of candidate resumes.",
     route: "/upload",
-    accent: "#0284c7",
-    light: "#e0f2fe",
+    accent: "#176b5b",
+    light: "#dcebe4",
     btn: "Upload Resumes →",
   },
   {
@@ -28,8 +28,8 @@ const steps = [
     title: "View Results",
     desc: "See ranked candidates with match scores and skill gap analysis.",
     route: "/results",
-    accent: "#7c3aed",
-    light: "#ede9fe",
+    accent: "#b7792f",
+    light: "#f7ead6",
     btn: "View Results →",
   },
 ];
@@ -102,38 +102,38 @@ function Dashboard() {
 const styles = {
   page: { maxWidth: 980, margin: "0 auto", padding: "60px 24px" },
   hero: { marginBottom: 52, textAlign: "center" },
-  greet: { fontSize: "0.9rem", color: "#6b7fa8", marginBottom: 14 },
+  greet: { fontSize: "0.9rem", color: "#69766f", marginBottom: 14 },
  heading: {
   fontFamily: "'Syne', sans-serif",
   fontSize: "3.4rem",
   fontWeight: 800,
   letterSpacing: "-0.02em",
-  color: "#1e3a5f",
+  color: "#17352f",
   lineHeight: 1.1,
   marginBottom: 18,
 },
-  sub: { color: "#6b7fa8", fontSize: "1.05rem", lineHeight: 1.7, maxWidth: 500, margin: "0 auto" },
+  sub: { color: "#69766f", fontSize: "1.05rem", lineHeight: 1.7, maxWidth: 500, margin: "0 auto" },
 
   steps: { display: "flex", gap: 0, alignItems: "stretch", position: "relative", marginBottom: 36 },
   stepRow: { flex: 1, position: "relative", display: "flex" },
   connector: {
     position: "absolute", top: "50%", right: -1, width: 2,
     height: "60%", transform: "translateY(-50%)",
-    background: "linear-gradient(180deg, #c7d7f8 0%, #e8f0fe 100%)",
+    background: "linear-gradient(180deg, #d9c8ad 0%, #e8f0eb 100%)",
     zIndex: 1,
   },
 
   card: {
     flex: 1,
     background: "#ffffff",
-    border: "1px solid #c7d7f8",
+    border: "1px solid #d9c8ad",
     borderRadius: 16,
     padding: "32px 28px",
     display: "flex",
     flexDirection: "column",
     gap: 16,
     margin: "0 8px",
-    boxShadow: "0 2px 16px rgba(37,99,235,0.07)",
+    boxShadow: "0 2px 16px rgba(23,53,47,0.08)",
     transition: "transform 0.2s, box-shadow 0.2s",
   },
   stepBadge: {
@@ -152,9 +152,9 @@ const styles = {
   cardContent: { flex: 1 },
   cardTitle: {
     fontFamily: "'Syne', sans-serif", fontSize: "1.1rem", fontWeight: 700,
-    color: "#1e3a5f", marginBottom: 8,
+    color: "#17352f", marginBottom: 8,
   },
-  cardDesc: { color: "#6b7fa8", fontSize: "0.875rem", lineHeight: 1.65 },
+  cardDesc: { color: "#69766f", fontSize: "0.875rem", lineHeight: 1.65 },
   cardBtn: {
     padding: "11px 18px",
     color: "#ffffff",
@@ -169,15 +169,15 @@ const styles = {
   },
 
   hint: {
-    background: "#fffbeb",
-    border: "1px solid #fcd34d",
+    background: "#fff8ea",
+    border: "1px solid #d9b46c",
     borderRadius: 10,
     padding: "13px 18px",
     display: "flex",
     alignItems: "center",
     gap: 10,
     fontSize: "0.875rem",
-    color: "#78716c",
+    color: "#6f5f45",
   },
   hintIcon: { fontSize: "1rem" },
 };

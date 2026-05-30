@@ -79,14 +79,14 @@ function Register() {
               label="Full Name"
               value={form.name}
               onChange={update("name")}
-              placeholder="Ankita Sharma"
+              placeholder="Bhavya Goel"
             />
             <Field
               label="Email"
               type="email"
               value={form.email}
               onChange={update("email")}
-              placeholder="ankita@example.com"
+              placeholder="bhavya@example.com"
             />
           </div>
           <div style={styles.row}>
@@ -132,7 +132,7 @@ function Field({ label, value, onChange, placeholder, type = "text" }) {
         style={{
           fontSize: "0.82rem",
           fontWeight: 500,
-          color: "#4a6080",
+          color: "#40564f",
           letterSpacing: "0.02em",
         }}
       >
@@ -155,23 +155,23 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     padding: "40px 20px",
-    background: "#f0f5ff",
+    background: "#f6f1e8",
   },
   card: {
     width: "100%",
     maxWidth: 600,
     background: "#ffffff",
-    border: "1px solid #c7d7f8",
+    border: "1px solid #d9c8ad",
     borderRadius: 16,
     padding: "48px 44px",
-    boxShadow: "0 4px 24px rgba(37,99,235,0.08)",
+    boxShadow: "0 4px 24px rgba(23,53,47,0.10)",
   },
   header: { marginBottom: 36 },
   logo: {
     fontFamily: "'Syne', sans-serif",
     fontWeight: 800,
     fontSize: "1.1rem",
-    color: "#1e3a5f",
+    color: "#17352f",
     display: "flex",
     alignItems: "center",
     gap: 8,
@@ -181,24 +181,24 @@ const styles = {
     width: 10,
     height: 10,
     borderRadius: "50%",
-    background: "#2563eb",
+    background: "#d59b45",
     display: "inline-block",
   },
   title: {
     fontFamily: "'Syne', sans-serif",
     fontSize: "1.7rem",
     fontWeight: 700,
-    color: "#1e3a5f",
+    color: "#17352f",
     marginBottom: 6,
   },
-  subtitle: { color: "#6b7fa8", fontSize: "0.95rem" },
+  subtitle: { color: "#69766f", fontSize: "0.95rem" },
   form: { display: "flex", flexDirection: "column", gap: 20 },
   row: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 },
   btn: {
     marginTop: 8,
     padding: "13px",
-    background: "#2563eb",
-    color: "#ffffff",
+    background: "#17352f",
+    color: "#fff8ef",
     border: "none",
     borderRadius: 8,
     fontFamily: "'Syne', sans-serif",
@@ -218,10 +218,10 @@ const styles = {
   footer: {
     marginTop: 24,
     textAlign: "center",
-    color: "#6b7fa8",
+    color: "#69766f",
     fontSize: "0.875rem",
   },
-  footerLink: { color: "#2563eb", fontWeight: 600 },
+  footerLink: { color: "#b7792f", fontWeight: 600 },
 };
 
 export default Register;

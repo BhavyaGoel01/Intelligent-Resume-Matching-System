@@ -113,20 +113,20 @@ function Results() {
     const rows = selectedCandidates.map((c, i) => {
       const es = emailMap[c.resumeId] || {};
       return `
-        <tr style="background:${i % 2 === 0 ? "#f8faff" : "#ffffff"}">
-          <td style="padding:10px 14px;font-weight:700;color:#1e3a5f">${i + 1}</td>
-          <td style="padding:10px 14px;color:#1e3a5f">${c.resumeFileName}</td>
-          <td style="padding:10px 14px;color:#2563eb">${es.email || c.candidateEmail || "—"}</td>
+        <tr style="background:${i % 2 === 0 ? "#fffdf8" : "#ffffff"}">
+          <td style="padding:10px 14px;font-weight:700;color:#17352f">${i + 1}</td>
+          <td style="padding:10px 14px;color:#17352f">${c.resumeFileName}</td>
+          <td style="padding:10px 14px;color:#b7792f">${es.email || c.candidateEmail || "—"}</td>
           <td style="padding:10px 14px;text-align:center">
-            <span style="background:#dcfce7;color:#15803d;padding:3px 12px;border-radius:99px;font-weight:700;font-size:13px">
+            <span style="background:#e8f0eb;color:#176b5b;padding:3px 12px;border-radius:99px;font-weight:700;font-size:13px">
               ${c.matchPercentage}%
             </span>
           </td>
-          <td style="padding:10px 14px;color:#15803d;font-size:12px">${(c.matchedKeywords || []).join(", ") || "—"}</td>
+          <td style="padding:10px 14px;color:#176b5b;font-size:12px">${(c.matchedKeywords || []).join(", ") || "—"}</td>
           <td style="padding:10px 14px;color:#dc2626;font-size:12px">${(c.missingKeywords || []).join(", ") || "—"}</td>
           <td style="padding:10px 14px;text-align:center">
             ${es.sent
-              ? `<span style="background:#dcfce7;color:#15803d;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600">✅ Sent</span>`
+              ? `<span style="background:#e8f0eb;color:#176b5b;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600">✅ Sent</span>`
               : `<span style="background:#fef2f2;color:#dc2626;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600">⏳ Pending</span>`
             }
           </td>
@@ -141,25 +141,25 @@ function Results() {
         <title>SkillMatch — Selected Candidates Report</title>
         <style>
           * { margin:0; padding:0; box-sizing:border-box; }
-          body { font-family: 'Segoe UI', Arial, sans-serif; background:#fff; color:#1e3a5f; }
-          .header { background: linear-gradient(135deg,#1d4ed8,#3b82f6); padding:36px 48px; color:#fff; }
+          body { font-family: 'Segoe UI', Arial, sans-serif; background:#fff; color:#17352f; }
+          .header { background: linear-gradient(135deg,#17352f,#176b5b); padding:36px 48px; color:#fff8ef; }
           .header h1 { font-size:24px; font-weight:800; margin-bottom:6px; }
           .header p  { font-size:13px; opacity:0.85; }
-          .meta  { display:flex; gap:32px; padding:20px 48px; background:#f8faff; border-bottom:2px solid #e8f0fe; }
+          .meta  { display:flex; gap:32px; padding:20px 48px; background:#fffdf8; border-bottom:2px solid #e8dfcf; }
           .meta div { display:flex; flex-direction:column; gap:2px; }
-          .meta .label { font-size:10px; font-weight:700; color:#6b7fa8; text-transform:uppercase; letter-spacing:0.06em; }
-          .meta .value { font-size:14px; font-weight:700; color:#1e3a5f; }
+          .meta .label { font-size:10px; font-weight:700; color:#69766f; text-transform:uppercase; letter-spacing:0.06em; }
+          .meta .value { font-size:14px; font-weight:700; color:#17352f; }
           .body  { padding:28px 48px; }
-          h2 { font-size:15px; font-weight:700; color:#1e3a5f; margin-bottom:16px; }
-          table { width:100%; border-collapse:collapse; border:1px solid #e8f0fe; border-radius:10px; overflow:hidden; font-size:13px; }
-          th { background:#1d4ed8; color:#fff; padding:10px 14px; text-align:left; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; }
+          h2 { font-size:15px; font-weight:700; color:#17352f; margin-bottom:16px; }
+          table { width:100%; border-collapse:collapse; border:1px solid #e8dfcf; border-radius:10px; overflow:hidden; font-size:13px; }
+          th { background:#17352f; color:#fff8ef; padding:10px 14px; text-align:left; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; }
           tr:last-child td { border-bottom:none; }
-          td { border-bottom:1px solid #e8f0fe; }
+          td { border-bottom:1px solid #e8dfcf; }
           .summary { display:flex; gap:16px; margin-bottom:24px; }
-          .sum-box { flex:1; background:#f8faff; border:1px solid #c7d7f8; border-radius:10px; padding:14px 18px; }
+          .sum-box { flex:1; background:#fffdf8; border:1px solid #d9c8ad; border-radius:10px; padding:14px 18px; }
           .sum-num { font-size:28px; font-weight:800; }
-          .sum-lbl { font-size:10px; font-weight:700; color:#6b7fa8; text-transform:uppercase; letter-spacing:0.04em; margin-top:2px; }
-          .footer { margin-top:32px; padding-top:16px; border-top:1px solid #e8f0fe; text-align:center; font-size:11px; color:#93b4d0; }
+          .sum-lbl { font-size:10px; font-weight:700; color:#69766f; text-transform:uppercase; letter-spacing:0.04em; margin-top:2px; }
+          .footer { margin-top:32px; padding-top:16px; border-top:1px solid #e8dfcf; text-align:center; font-size:11px; color:#8a9a91; }
           @media print {
             .header { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
             th { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
@@ -183,15 +183,15 @@ function Results() {
         <div class="body">
           <div class="summary">
             <div class="sum-box">
-              <div class="sum-num" style="color:#1e3a5f">${candidates.length}</div>
+              <div class="sum-num" style="color:#17352f">${candidates.length}</div>
               <div class="sum-lbl">Total Resumes</div>
             </div>
             <div class="sum-box">
-              <div class="sum-num" style="color:#16a34a">${selectedCandidates.length}</div>
+              <div class="sum-num" style="color:#176b5b">${selectedCandidates.length}</div>
               <div class="sum-lbl">Selected ≥60%</div>
             </div>
             <div class="sum-box">
-              <div class="sum-num" style="color:#2563eb">${Object.values(emailMap).filter(e => e.sent).length}</div>
+              <div class="sum-num" style="color:#b7792f">${Object.values(emailMap).filter(e => e.sent).length}</div>
               <div class="sum-lbl">Emails Sent</div>
             </div>
             <div class="sum-box">
@@ -229,8 +229,8 @@ function Results() {
     setTimeout(() => win.print(), 500);
   };
 
-  const scoreColor = (p) => p >= 60 ? "#16a34a" : p >= 40 ? "#d97706" : "#dc2626";
-  const scoreBg    = (p) => p >= 60 ? "#dcfce7" : p >= 40 ? "#fef3c7" : "#fef2f2";
+  const scoreColor = (p) => p >= 60 ? "#176b5b" : p >= 40 ? "#b7792f" : "#dc2626";
+  const scoreBg    = (p) => p >= 60 ? "#e8f0eb" : p >= 40 ? "#f7ead6" : "#fef2f2";
   const scoreLabel = (p) => p >= 60 ? "✅ Selected" : p >= 40 ? "⚡ Partial" : "❌ Rejected";
   const qualifiedCount = candidates.filter(c => c.matchPercentage >= 60).length;
   const sentCount      = Object.values(emailMap).filter(e => e.sent).length;
@@ -244,7 +244,7 @@ function Results() {
           <div style={S.stepTag}>Step 03</div>
           <h1 style={S.title}>Match Results</h1>
           <p style={S.subtitle}>
-            Selection emails are <strong style={{ color: "#16a34a" }}>sent automatically</strong> to
+            Selection emails are <strong style={{ color: "#176b5b" }}>sent automatically</strong> to
             all candidates with 60%+ match as soon as results load.
           </p>
         </div>
@@ -258,8 +258,8 @@ function Results() {
 
         <div style={S.legend}>
           {[
-            { dot: "#16a34a", label: "≥ 60% — Selected (auto email sent)" },
-            { dot: "#d97706", label: "40–59% — Partial" },
+            { dot: "#176b5b", label: "≥ 60% — Selected (auto email sent)" },
+            { dot: "#b7792f", label: "40–59% — Partial" },
             { dot: "#dc2626", label: "< 40% — Rejected" },
           ].map(l => (
             <span key={l.label} style={{ ...S.legendItem, color: l.dot }}>
@@ -289,11 +289,11 @@ function Results() {
             {/* Summary + PDF button */}
             <div style={S.summaryBar}>
               <div style={S.summaryStats}>
-                <div style={S.summaryItem}><span style={{ ...S.summaryNum, color: "#1e3a5f" }}>{candidates.length}</span><span style={S.summaryLabel}>Total</span></div>
+                <div style={S.summaryItem}><span style={{ ...S.summaryNum, color: "#17352f" }}>{candidates.length}</span><span style={S.summaryLabel}>Total</span></div>
                 <div style={S.divider} />
-                <div style={S.summaryItem}><span style={{ ...S.summaryNum, color: "#16a34a" }}>{qualifiedCount}</span><span style={S.summaryLabel}>Selected ≥60%</span></div>
+                <div style={S.summaryItem}><span style={{ ...S.summaryNum, color: "#176b5b" }}>{qualifiedCount}</span><span style={S.summaryLabel}>Selected ≥60%</span></div>
                 <div style={S.divider} />
-                <div style={S.summaryItem}><span style={{ ...S.summaryNum, color: "#2563eb" }}>{sentCount}</span><span style={S.summaryLabel}>Emails Sent</span></div>
+                <div style={S.summaryItem}><span style={{ ...S.summaryNum, color: "#b7792f" }}>{sentCount}</span><span style={S.summaryLabel}>Emails Sent</span></div>
                 <div style={S.divider} />
                 <div style={S.summaryItem}><span style={{ ...S.summaryNum, color: "#dc2626" }}>{candidates.length - qualifiedCount}</span><span style={S.summaryLabel}>Not Selected</span></div>
               </div>
@@ -317,7 +317,7 @@ function Results() {
                   <div key={c.resumeId} style={{
                     ...S.candidateCard,
                     borderLeft: `4px solid ${scoreColor(c.matchPercentage)}`,
-                    background: qualified ? "#fafffe" : "#ffffff",
+                    background: qualified ? "#fbfffb" : "#ffffff",
                   }}>
                     <div style={S.cardTop}>
                       <span style={S.medal}>{i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : `#${i+1}`}</span>
@@ -345,7 +345,7 @@ function Results() {
                           <div style={S.sendingPill}><div style={S.miniSpinner} /> Sending to {es.email}…</div>
                         ) : (
                           <div style={S.manualRow}>
-                            {es.msg && <span style={{ fontSize: "0.8rem", color: es.msg.startsWith("⚠️") ? "#d97706" : "#dc2626" }}>{es.msg}</span>}
+                            {es.msg && <span style={{ fontSize: "0.8rem", color: es.msg.startsWith("⚠️") ? "#b7792f" : "#dc2626" }}>{es.msg}</span>}
                             {!c.candidateEmail && (
                               <>
                                 <input type="email" placeholder="Enter email manually…" value={es.email || ""} onChange={e => updateEmail(c.resumeId, "email", e.target.value)} style={S.emailInput} />
@@ -369,7 +369,7 @@ function Results() {
                         <div style={S.kwRow}>
                           <div style={S.kwBox}>
                             <div style={S.kwTitle}>✅ Matched ({c.matchedKeywords?.length})</div>
-                            <div style={S.kwChips}>{(c.matchedKeywords || []).sort().map(k => <span key={k} style={{ ...S.kwChip, background: "#dcfce7", border: "1px solid #86efac", color: "#15803d" }}>{k}</span>)}</div>
+                            <div style={S.kwChips}>{(c.matchedKeywords || []).sort().map(k => <span key={k} style={{ ...S.kwChip, background: "#e8f0eb", border: "1px solid #a8beb1", color: "#176b5b" }}>{k}</span>)}</div>
                           </div>
                           <div style={S.kwBox}>
                             <div style={S.kwTitle}>❌ Missing ({c.missingKeywords?.length})</div>
@@ -392,55 +392,55 @@ function Results() {
 const S = {
   page:     { maxWidth: 900, margin: "0 auto", padding: "60px 24px" },
   header:   { marginBottom: 20 },
-  stepTag:  { display: "inline-block", padding: "3px 12px", background: "#ede9fe", color: "#7c3aed", borderRadius: 99, fontSize: "0.75rem", fontWeight: 800, letterSpacing: "0.06em", marginBottom: 14 },
-  title:    { fontFamily: "'Syne', sans-serif", fontSize: "2rem", fontWeight: 700, color: "#1e3a5f", marginBottom: 8 },
-  subtitle: { color: "#6b7fa8", fontSize: "0.95rem", lineHeight: 1.7 },
-  contextBar: { background: "#ffffff", border: "1px solid #c7d7f8", borderRadius: 10, padding: "12px 20px", display: "flex", alignItems: "center", gap: 16, marginBottom: 16, flexWrap: "wrap" },
-  ctxTitle:   { fontWeight: 700, color: "#1e3a5f", fontSize: "0.95rem" },
-  ctxSkills:  { color: "#6b7fa8", fontSize: "0.875rem" },
+  stepTag:  { display: "inline-block", padding: "3px 12px", background: "#f7ead6", color: "#b7792f", borderRadius: 99, fontSize: "0.75rem", fontWeight: 800, letterSpacing: "0.06em", marginBottom: 14 },
+  title:    { fontFamily: "'Syne', sans-serif", fontSize: "2rem", fontWeight: 700, color: "#17352f", marginBottom: 8 },
+  subtitle: { color: "#69766f", fontSize: "0.95rem", lineHeight: 1.7 },
+  contextBar: { background: "#ffffff", border: "1px solid #d9c8ad", borderRadius: 10, padding: "12px 20px", display: "flex", alignItems: "center", gap: 16, marginBottom: 16, flexWrap: "wrap" },
+  ctxTitle:   { fontWeight: 700, color: "#17352f", fontSize: "0.95rem" },
+  ctxSkills:  { color: "#69766f", fontSize: "0.875rem" },
   legend:     { display: "flex", gap: 20, marginBottom: 24, flexWrap: "wrap" },
   legendItem: { display: "flex", alignItems: "center", gap: 6, fontSize: "0.82rem", fontWeight: 600 },
   legendDot:  { width: 8, height: 8, borderRadius: "50%", flexShrink: 0 },
-  runBtn: { display: "block", margin: "0 auto 28px", padding: "14px 44px", background: "#2563eb", color: "#ffffff", border: "none", borderRadius: 10, fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "1rem", cursor: "pointer" },
+  runBtn: { display: "block", margin: "0 auto 28px", padding: "14px 44px", background: "#17352f", color: "#fff8ef", border: "none", borderRadius: 10, fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "1rem", cursor: "pointer" },
   error:  { background: "#fef2f2", border: "1px solid #fca5a5", borderRadius: 8, padding: "12px 16px", color: "#dc2626", fontSize: "0.875rem", marginBottom: 20 },
-  loadingBox: { display: "flex", alignItems: "center", gap: 14, justifyContent: "center", padding: "40px", color: "#6b7fa8" },
-  spinner:    { width: 22, height: 22, border: "3px solid #e8f0fe", borderTop: "3px solid #2563eb", borderRadius: "50%", animation: "spin 0.8s linear infinite", flexShrink: 0 },
-  miniSpinner:{ width: 14, height: 14, border: "2px solid #bfdbfe", borderTop: "2px solid #2563eb", borderRadius: "50%", animation: "spin 0.8s linear infinite", flexShrink: 0 },
-  autoSendBanner: { display: "flex", alignItems: "center", gap: 12, background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: 10, padding: "14px 20px", marginBottom: 20, color: "#1d4ed8", fontWeight: 600, fontSize: "0.9rem" },
-  summaryBar:   { background: "#ffffff", border: "1px solid #c7d7f8", borderRadius: 12, padding: "14px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, flexWrap: "wrap", gap: 12 },
+  loadingBox: { display: "flex", alignItems: "center", gap: 14, justifyContent: "center", padding: "40px", color: "#69766f" },
+  spinner:    { width: 22, height: 22, border: "3px solid #e8dfcf", borderTop: "3px solid #b7792f", borderRadius: "50%", animation: "spin 0.8s linear infinite", flexShrink: 0 },
+  miniSpinner:{ width: 14, height: 14, border: "2px solid #d9c8ad", borderTop: "2px solid #b7792f", borderRadius: "50%", animation: "spin 0.8s linear infinite", flexShrink: 0 },
+  autoSendBanner: { display: "flex", alignItems: "center", gap: 12, background: "#fff8ea", border: "1px solid #d9b46c", borderRadius: 10, padding: "14px 20px", marginBottom: 20, color: "#b7792f", fontWeight: 600, fontSize: "0.9rem" },
+  summaryBar:   { background: "#ffffff", border: "1px solid #d9c8ad", borderRadius: 12, padding: "14px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, flexWrap: "wrap", gap: 12 },
   summaryStats: { display: "flex", alignItems: "center" },
   summaryItem:  { display: "flex", flexDirection: "column", alignItems: "center", gap: 2, padding: "0 16px" },
   summaryNum:   { fontFamily: "'Syne', sans-serif", fontSize: "1.4rem", fontWeight: 800 },
-  summaryLabel: { fontSize: "0.68rem", color: "#6b7fa8", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em" },
-  divider:      { width: 1, height: 32, background: "#e8f0fe" },
-  pdfBtn:  { padding: "7px 16px", background: "#1e3a5f", color: "#ffffff", border: "none", borderRadius: 8, fontSize: "0.82rem", cursor: "pointer", fontFamily: "'Syne', sans-serif", fontWeight: 700 },
-  rerunBtn:{ padding: "7px 14px", background: "#f8faff", border: "1px solid #c7d7f8", borderRadius: 8, color: "#4a6080", fontSize: "0.82rem", cursor: "pointer", fontFamily: "'DM Sans', sans-serif" },
+  summaryLabel: { fontSize: "0.68rem", color: "#69766f", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em" },
+  divider:      { width: 1, height: 32, background: "#e8dfcf" },
+  pdfBtn:  { padding: "7px 16px", background: "#17352f", color: "#fff8ef", border: "none", borderRadius: 8, fontSize: "0.82rem", cursor: "pointer", fontFamily: "'Syne', sans-serif", fontWeight: 700 },
+  rerunBtn:{ padding: "7px 14px", background: "#fffdf8", border: "1px solid #d9c8ad", borderRadius: 8, color: "#40564f", fontSize: "0.82rem", cursor: "pointer", fontFamily: "'DM Sans', sans-serif" },
   cardList:      { display: "flex", flexDirection: "column", gap: 14 },
-  candidateCard: { background: "#ffffff", border: "1px solid #c7d7f8", borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 10px rgba(37,99,235,0.06)", display: "flex", flexDirection: "column", gap: 0 },
+  candidateCard: { background: "#ffffff", border: "1px solid #d9c8ad", borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 10px rgba(23,53,47,0.07)", display: "flex", flexDirection: "column", gap: 0 },
   cardTop:  { display: "flex", alignItems: "center", gap: 14 },
   medal:    { fontSize: "1.3rem", flexShrink: 0 },
   cardInfo: { flex: 1, display: "flex", flexDirection: "column", gap: 4, minWidth: 0 },
-  cardName: { fontWeight: 700, color: "#1e3a5f", fontSize: "0.9rem", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" },
-  cardMeta: { fontSize: "0.75rem", color: "#6b7fa8", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" },
-  emailChip:{ background: "#dbeafe", color: "#1d4ed8", padding: "1px 8px", borderRadius: 99, fontSize: "0.72rem", fontWeight: 600 },
+  cardName: { fontWeight: 700, color: "#17352f", fontSize: "0.9rem", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" },
+  cardMeta: { fontSize: "0.75rem", color: "#69766f", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" },
+  emailChip:{ background: "#f7ead6", color: "#b7792f", padding: "1px 8px", borderRadius: 99, fontSize: "0.72rem", fontWeight: 600 },
   cardRight:{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 },
   pctBadge:    { padding: "4px 12px", borderRadius: 99, fontSize: "0.85rem", fontWeight: 800 },
   statusBadge: { padding: "4px 10px", borderRadius: 99, fontSize: "0.75rem", fontWeight: 700 },
-  detailBtn:   { padding: "5px 12px", background: "#f0f4fd", border: "1px solid #c7d7f8", borderRadius: 7, color: "#2563eb", fontSize: "0.78rem", cursor: "pointer", fontWeight: 600, fontFamily: "'DM Sans', sans-serif" },
-  emailStatusRow: { marginTop: 12, paddingTop: 12, borderTop: "1px dashed #c7d7f8" },
-  sentPill:    { display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", background: "#dcfce7", border: "1px solid #86efac", borderRadius: 99, color: "#15803d", fontSize: "0.82rem", fontWeight: 600 },
-  sendingPill: { display: "inline-flex", alignItems: "center", gap: 8, padding: "7px 14px", background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: 99, color: "#1d4ed8", fontSize: "0.82rem", fontWeight: 600 },
+  detailBtn:   { padding: "5px 12px", background: "#fffdf8", border: "1px solid #d9c8ad", borderRadius: 7, color: "#b7792f", fontSize: "0.78rem", cursor: "pointer", fontWeight: 600, fontFamily: "'DM Sans', sans-serif" },
+  emailStatusRow: { marginTop: 12, paddingTop: 12, borderTop: "1px dashed #d9c8ad" },
+  sentPill:    { display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", background: "#e8f0eb", border: "1px solid #a8beb1", borderRadius: 99, color: "#176b5b", fontSize: "0.82rem", fontWeight: 600 },
+  sendingPill: { display: "inline-flex", alignItems: "center", gap: 8, padding: "7px 14px", background: "#fff8ea", border: "1px solid #d9b46c", borderRadius: 99, color: "#b7792f", fontSize: "0.82rem", fontWeight: 600 },
   manualRow:   { display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" },
-  emailInput:  { flex: "1 1 200px", padding: "7px 12px", border: "1.5px solid #c7d7f8", borderRadius: 7, fontSize: "0.875rem", fontFamily: "'DM Sans', sans-serif", outline: "none", color: "#1e3a5f" },
-  sendBtn:     { padding: "7px 16px", background: "#16a34a", color: "#ffffff", border: "none", borderRadius: 7, fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "0.8rem", cursor: "pointer", whiteSpace: "nowrap" },
-  detailPanel:   { marginTop: 16, paddingTop: 16, borderTop: "1px solid #e8f0fe" },
+  emailInput:  { flex: "1 1 200px", padding: "7px 12px", border: "1.5px solid #d9c8ad", borderRadius: 7, fontSize: "0.875rem", fontFamily: "'DM Sans', sans-serif", outline: "none", color: "#17352f" },
+  sendBtn:     { padding: "7px 16px", background: "#176b5b", color: "#fff8ef", border: "none", borderRadius: 7, fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "0.8rem", cursor: "pointer", whiteSpace: "nowrap" },
+  detailPanel:   { marginTop: 16, paddingTop: 16, borderTop: "1px solid #e8dfcf" },
   progressRow:   { display: "flex", alignItems: "center", gap: 12, marginBottom: 16 },
-  progressBar:   { flex: 1, height: 8, background: "#e8f0fe", borderRadius: 99, overflow: "hidden", position: "relative" },
+  progressBar:   { flex: 1, height: 8, background: "#e8dfcf", borderRadius: 99, overflow: "hidden", position: "relative" },
   progressFill:  { height: "100%", borderRadius: 99, transition: "width 0.8s ease" },
-  thresholdMark: { position: "absolute", top: 0, left: "60%", width: 2, height: "100%", background: "#1e3a5f", opacity: 0.3 },
+  thresholdMark: { position: "absolute", top: 0, left: "60%", width: 2, height: "100%", background: "#17352f", opacity: 0.3 },
   kwRow:  { display: "flex", gap: 12 },
-  kwBox:  { flex: 1, background: "#f8faff", borderRadius: 10, padding: "14px" },
-  kwTitle:{ fontWeight: 700, color: "#1e3a5f", fontSize: "0.82rem", marginBottom: 10 },
+  kwBox:  { flex: 1, background: "#fffdf8", borderRadius: 10, padding: "14px" },
+  kwTitle:{ fontWeight: 700, color: "#17352f", fontSize: "0.82rem", marginBottom: 10 },
   kwChips:{ display: "flex", flexWrap: "wrap", gap: 6 },
   kwChip: { padding: "2px 10px", borderRadius: 99, fontSize: "0.75rem", fontWeight: 500 },
 };
